@@ -15,28 +15,168 @@
 
 */
 
-
+/* The @import rule was used to bring in css information from the cw_designs.css document. */
 /* Import Basic Design Styles  */
+@import url(cw_designs.css);
 
-
+/* The navigation seletor with an ID of bottom was targeted and given specification of displaying it using flexbox. The flex rule was set to row with no wrap that will grow and shrink on a 1:1 ratio with a basis of 150 pixel units.  */
 
 /* ===============================
 	General Styles for All Devices
    ===============================
 */
+nav#bottom {
+   display: -webkit-flex;
+   display: flex;
 
+   -webkit-flex-flow: row nowrap;
+   flex-flow: row nowrap;
+   justify-content: center;
+}
 
+nav#bottom ul {
+   -webkit-flex: 1 1 150px;
+   flex: 1 1 150px;
+}
+
+/* the Media query was used to target screenssmaller than 480px. The Specifications go as follows: the body was given a new color and background color. The aside, article, iamges, and section with an ID of spotlight are not to be seen. The unordered ist(ul) nested within the  nav with an ID of "top" was displayed in flex row with wrap. the list items within that unordered list was were gven a fontsize of 2.2 em units and a flex growth/shrink of ation 1:1 that has a basis of 130px. Six list items were given an image as a background . The iamge was set to not repeat,cover the intire element, and centered. The paragaph with an ID of "links" was given a flex flow wiht nowrap. The hypertext links nested in that paragraph were given a text-color of white, new background color, a border radiusof 20 pixel units, all around padding of 10 pixel units, and the underline was removed from text.*/
 
 /* ===============================
 	Mobile Styles up to 480 pixels
    ===============================
 */
-	
+@media only screen and (max-width:480px) {
+   body {
+      color: rgb(211, 211, 211);
+      background-color: rgb(51, 51, 51);
+   }
 
+   aside,
+   article img,
+   section#spotlight {
+      display: none;
+   }
 
+   nav#top ul {
+      display: -webkit-flex;
+      display: flex;
+
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+   }
+
+   nav#top ul li {
+      font-size: 2.2em;
+      -webkit-flex: 1 1 130px;
+      flex: 1 1 130px;
+   }
+
+   nav#top ul li:nth-of-type(1) {
+      background: url(cw_image01.png) no-repeat;
+      background-position: center;
+      background-size: cover;
+
+   }
+
+   nav#top ul li:nth-of-type(2) {
+      background: url(cw_image02.png) no-repeat;
+      background-position: center;
+      background-size: cover;
+
+   }
+
+   nav#top ul li:nth-of-type(3) {
+      background: url(cw_image03.png) no-repeat;
+      background-position: center;
+      background-size: cover;
+
+   }
+
+   nav#top ul li:nth-of-type(4) {
+      background: url(cw_image04.png) no-repeat;
+      background-position: center;
+      background-size: cover;
+
+   }
+
+   nav#top ul li:nth-of-type(5) {
+      background: url(cw_image05.png) no-repeat;
+      background-position: center;
+      background-size: cover;
+
+   }
+
+   nav#top ul li:nth-of-type(6) {
+      background: url(cw_image06.png) no-repeat;
+      background-position: center;
+      background-size: cover;
+
+   }
+
+   p#links {
+      display: -webkit-flex;
+      display: flex;
+
+      -webkit-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+   }
+
+   p#links a {
+      color: white;
+      background-color: rgb(220, 27, 27);
+      border-radius: 20px;
+      padding: 10px;
+      text-decoration: none;
+   }
+}
+
+/* The media query was used to target screens larger than 481px. The specifications go as follows: The body was given a dsplay of flex row with wrap. The article growth to shrink ratiois 2:1 with a basis of 400 pixel units. The aside has a ratio of 1:2 with the basis of 200 pixel units The nav with an ID of "top" was given a flex column with wrap.the unordered list was given a new background color, height of 50 pixel units, cenered vertically and horzontaly, and given a grow/shrink rate of 1:1 with an 80px basis. The paragraph with an ID of "links"  was displayed as "none" so it would not render..*/
 
 /* ============================================
 	Tablet and Desktop Devices: 481px or more 
    ============================================
 */
+@media only screen and (min-width:481px) {
+   body {
+      display: -webkit-flex;
+      display: flex;
 
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+   }
+
+   article {
+      -webkit-flex: 2 1 400px;
+      flex: 2 1 400px;
+   }
+
+   aside {
+      -webkit-flex: 1 2 200px;
+      flex: 1 2 200px;
+   }
+
+   nav#top ul {
+      display: -webkit-flex;
+      display: flex;
+
+      -webkit-flex-flow: column nowrap;
+      flex-flow: column wrap;
+   }
+
+   nav#top ul {
+      background-color: rgb(51, 51, 51);
+      height: 50px;
+      justify-content: center;
+      align-content: center;
+   }
+
+   nav#top ul {
+      -webkit-flex: 1 1 80px;
+      flex: 1 1 80px;
+   }
+
+   p#links {
+      display: none;
+   }
+}
